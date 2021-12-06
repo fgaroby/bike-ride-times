@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Path extends Model
 {
@@ -16,6 +17,17 @@ class Path extends Model
      * @var string
      */
     protected $table = 'paths';
+
+    public function getLatLngsAttribute(): string
+    {
+        $from = $this->markerFrom;
+        $to = $this->markerTo;
+
+        return json_encode([
+            $from->latLng,
+            $to->latLng,
+        ]);
+    }
 
     /**
      * Return the starting point Marker.
@@ -37,14 +49,13 @@ class Path extends Model
         return $this->belongsTo(Marker::class, 'to', 'id');
     }
 
-    public function getLatLngsAttribute(): string
+    /**
+     * Return the color of this path.
+     *
+     * @return HasOne
+     */
+    public function color(): HasOne
     {
-        $from = $this->markerFrom;
-        $to = $this->markerTo;
-
-        return json_encode([
-            $from->latLng,
-            $to->latLng,
-        ]);
+        return $this->hasOne(Color::class, 'id', 'color_id');
     }
 }

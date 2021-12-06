@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('markers', MarkerController::class);
 Route::resource('paths', PathController::class);
+Route::resource('colors', ColorController::class);

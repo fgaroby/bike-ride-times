@@ -19,6 +19,7 @@ class PathResource extends JsonResource
             'from' => $this->markerFrom->id,
             'to' => $this->markerTo->id,
             'latLngs' => $this->latLngs,
+            'color' => $this->color->color,
         ];
     }
 }
