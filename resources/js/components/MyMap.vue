@@ -8,8 +8,11 @@
         @ready="loadMarkers()">
         <l-tile-layer
             :url="url"
-            :attribution="attribution"></l-tile-layer>
-        <l-marker v-for="marker in markers" :key="marker.id" :latLng="marker.latLng">
+            :attribution="attribution">
+        </l-tile-layer>
+        <l-marker v-for="marker in markers"
+            :key="'marker_' + marker.id"
+            :latLng="marker.latLng">
         </l-marker>
     </l-map>
 </template>
