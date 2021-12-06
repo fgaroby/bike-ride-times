@@ -14,6 +14,11 @@
             :key="'marker_' + marker.id"
             :latLng="marker.latLng">
         </l-marker>
+        <l-polyline v-for="path in paths"
+            :key="'path_' + path.id"
+            :latLngs="path.latLngs"
+            :color="path.color">
+        </l-polyline>
     </l-map>
 </template>
 
@@ -56,7 +61,7 @@ export default {
                            this.paths.push({
                                id: path.id,
                                latLngs: JSON.parse(path.latLngs),
-                               color: '#3388FF',
+                               color: path.color,
                            });
                        });
                    });
