@@ -22,14 +22,15 @@
 // explicitly import 'leaflet' into your component
 import Axios from 'axios';
 import { latLng } from "leaflet";
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import { LMap, LMarker, LPolyline, LTileLayer } from 'vue2-leaflet';
 
 export default {
   name: 'MyMap',
   components: {
     LMap,
-    LTileLayer,
     LMarker,
+    LPolyline,
+    LTileLayer,
   },
   data() {
       return {
@@ -38,6 +39,7 @@ export default {
           url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
           markers: [],
+          paths: [],
       }
   },
   methods: {
@@ -48,6 +50,14 @@ export default {
                        this.markers.push({
                            id: marker.id,
                            latLng: [marker.latitude, marker.longitude],
+                       });
+
+                       marker.paths.forEach(path => {
+                           this.paths.push({
+                               id: path.id,
+                               latLngs: JSON.parse(path.latLngs),
+                               color: '#3388FF',
+                           });
                        });
                    });
                });
