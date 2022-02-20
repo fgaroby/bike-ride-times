@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Resources\MarkerResource;
 use App\Models\Marker;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class MarkerController extends Controller
 {
@@ -17,7 +16,7 @@ class MarkerController extends Controller
     public function index()
     {
         $markers = Marker::with('paths')
-                         ->get();
+            ->get();
 
         return MarkerResource::collection($markers);
     }
@@ -29,62 +28,61 @@ class MarkerController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Marker  $marker
+     * @param \App\Models\Marker $marker
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Marker $marker)
     {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Marker  $marker
+     * @param \App\Models\Marker $marker
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Marker $marker)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Marker  $marker
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Marker $marker
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Marker $marker)
     {
-        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Marker  $marker
+     * @param \App\Models\Marker $marker
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Marker $marker)
     {
-        //
     }
 }

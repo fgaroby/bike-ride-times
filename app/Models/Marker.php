@@ -17,7 +17,7 @@ class Marker extends Model
      */
     protected $table = 'markers';
 
-    public function getLatLngAttribute():  array
+    public function getLatLngAttribute(): array
     {
         return [
             $this->attributes['latitude'],

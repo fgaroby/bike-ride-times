@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreColorRequest;
 use App\Http\Requests\UpdateColorRequest;
 use App\Models\Color;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ColorController extends Controller
@@ -18,7 +17,7 @@ class ColorController extends Controller
     public function index()
     {
         $colors = Color::orderBy('sorting')
-                       ->get();
+            ->get();
 
         return JsonResource::collection($colors);
     }
@@ -30,24 +29,24 @@ class ColorController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreColorRequest  $request
+     * @param \App\Http\Requests\StoreColorRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreColorRequest $request)
     {
-        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Color  $color
+     * @param \App\Models\Color $color
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Color $color)
@@ -58,34 +57,34 @@ class ColorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Color  $color
+     * @param \App\Models\Color $color
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Color $color)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateColorRequest  $request
-     * @param  \App\Models\Color  $color
+     * @param \App\Http\Requests\UpdateColorRequest $request
+     * @param \App\Models\Color $color
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateColorRequest $request, Color $color)
     {
-        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Color  $color
+     * @param \App\Models\Color $color
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Color $color)
     {
-        //
     }
 }

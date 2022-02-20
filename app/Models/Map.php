@@ -25,7 +25,7 @@ class Map extends Model
     public function getCenterPointAttribute(): array
     {
         return [
-            'lat' => $this->latitude,
+            'lat'  => $this->latitude,
             'long' => $this->longitude,
         ];
     }

@@ -24,7 +24,6 @@ class StoreColorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }

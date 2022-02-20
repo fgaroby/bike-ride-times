@@ -15,9 +15,9 @@ class MarkerFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'latitude' => $this->faker->randomFloat(5, 49.134104, 49.342573),
-            'longitude' => $this->faker->randomFloat(5, -0.441513,-0.217667),
+            'name'       => $this->faker->name(),
+            'latitude'   => $this->faker->randomFloat(5, 49.134104, 49.342573),
+            'longitude'  => $this->faker->randomFloat(5, -0.441513, -0.217667),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
