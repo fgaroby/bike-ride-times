@@ -14,11 +14,11 @@ class MapFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'latitude' => 49.1822222,
+            'name'      => $this->faker->name(),
+            'latitude'  => 49.1822222,
             'longitude' => -0.3705555555555555,
             'tile_host' => config('maps.common.tile_host'),
-            'zoom' => config('maps.common.zoom'),
+            'zoom'      => config('maps.common.zoom'),
         ];
     }
 }

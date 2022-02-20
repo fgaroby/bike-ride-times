@@ -15,6 +15,6 @@ class MapSeeder extends Seeder
     public function run()
     {
         Map::factory()
-           ->create();
+            ->create();
     }
 }

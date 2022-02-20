@@ -15,7 +15,7 @@ class MarkerSeeder extends Seeder
     public function run()
     {
         Marker::factory()
-              ->count(50)
-              ->create();
+            ->count(50)
+            ->create();
     }
 }

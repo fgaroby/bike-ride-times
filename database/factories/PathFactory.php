@@ -17,9 +17,9 @@ class PathFactory extends Factory
     public function definition()
     {
         return [
-            'from' => Marker::all()->random()->id,
-            'to' => Marker::all()->random()->id,
-            'color_id' => Color::all()->random()->id,
+            'from'       => Marker::all()->random()->id,
+            'to'         => Marker::all()->random()->id,
+            'color_id'   => Color::all()->random()->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

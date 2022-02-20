@@ -24,7 +24,6 @@ class UpdatePathRequest extends FormRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }

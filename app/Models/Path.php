@@ -21,7 +21,7 @@ class Path extends Model
     public function getLatLngsAttribute(): string
     {
         $from = $this->markerFrom;
-        $to = $this->markerTo;
+        $to   = $this->markerTo;
 
         return json_encode([
             $from->latLng,

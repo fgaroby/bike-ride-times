@@ -15,9 +15,9 @@ class AlterPathsTableAddColorForeignKey extends Migration
     {
         Schema::table('paths', function (Blueprint $table) {
             $table->foreignId('color_id')
-                  ->nullable()
-                  ->after('to')
-                  ->constrained('colors');
+                ->nullable()
+                ->after('to')
+                ->constrained('colors');
         });
     }
 
